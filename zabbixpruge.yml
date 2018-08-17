@@ -12,6 +12,6 @@
   - name: Instalar agente nagios
     register: result
     apt: 
-     name: nagios-nrpe-server nagios-plugins-basic
+     name: nagios-nrpe-server
      state: present
      
