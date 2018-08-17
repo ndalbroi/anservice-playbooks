@@ -1,21 +1,19 @@
 ---
-- hosts: 192.168.1.122
+- hosts: prueba
   remote_user: anserv
-  become: yes
+  become: true
+  become_method: sudo
   become_user: root
-  
   tasks:
   - name: Purgar la instalacion de agente zabbix y paquetes adyacentes
     register: result
-    apt: 
+    apt:
      name: zabbix-agent
      state: absent
      purge: yes
- 
   - name: Instalar agente nagios
     register: result
-    apt: 
+    apt:
      name: nagios-nrpe-server
-     state: present
-     
-     
+     state: absent
+     purge: yes
