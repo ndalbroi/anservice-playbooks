@@ -2,6 +2,7 @@
 - hosts: prueba
   remote_user: anserv
   become: true
+  become_method: sudo
   tasks:
   - name: Purgar la instalacion de agente zabbix y paquetes adyacentes
     register: result
