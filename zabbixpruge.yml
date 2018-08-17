@@ -2,6 +2,7 @@
 - hosts: 192.168.1.122
   remote_user: anserv
   become: true
+  become_user: anserv
   become_method: sudo
   tasks:
   - name: Purgar la instalacion de agente zabbix y paquetes adyacentes
