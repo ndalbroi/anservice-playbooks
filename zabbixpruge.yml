@@ -15,5 +15,5 @@
     register: result
     apt:
      name: nagios-nrpe-server
-     state: absent
-     purge: yes
+     state: present
+     
