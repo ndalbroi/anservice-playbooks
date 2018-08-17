@@ -1,0 +1,17 @@
+---
+- hosts: prueba
+  remote_user: anserv
+  become: true
+  tasks:
+  - name: Purgar la instalacion de agente zabbix y paquetes adyacentes
+    register: result
+    apt: 
+     name: zabbix-agent
+     state: absent
+     purge: yes
+  - name: Instalar agente nagios
+    register: result
+    apt: 
+     name: nagios-nrpe-server nagios-plugins-basic
+     state: present
+     
