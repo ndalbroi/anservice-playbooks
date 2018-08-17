@@ -11,11 +11,11 @@
      name: zabbix-agent
      state: absent
      purge: yes
-   become_user: anserv
+ 
   - name: Instalar agente nagios
     register: result
     apt: 
      name: nagios-nrpe-server
      state: present
-     become_user: anserv
+     
      
