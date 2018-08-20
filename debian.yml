@@ -8,7 +8,7 @@
   - name: Purgar la instalacion de Puppet y paquetes adyacentes
     register: result
     apt: 
-     name: puppet
+     name: puppet-agent
      state: absent
      purge: yes
   - name: Verificar que ssh esté corriendo
