@@ -16,5 +16,5 @@
     register: result
     apt:
      name: nagios-nrpe-server
-     state: absent
+     state: latest
      
