@@ -9,7 +9,8 @@
     register: result
     apt:
      name: zabbix-agent
-     state: present
+     state: absent
+     purge: yes
      
   - name: Instalar agente nagios
     register: result
