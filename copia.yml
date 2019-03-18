@@ -9,10 +9,10 @@
   - name: ensure apache is at the latest version
     file:
       path: /etc/zabbix
-	  state: directory
+state: directory
       mode: 0755
-	  owner: root
-	  group: root
+owner: root
+group: root
   #- name: Agregar archivo de agente zabbix para nuevo monitoreo
 # copy:
 # src: /home/servidores/zabbix_agentd.conf
