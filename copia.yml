@@ -1,6 +1,5 @@
 ---
 - hosts: 192.168.100.103
-- hosts: prueba
   remote_user: anserv
   become: true
   become_method: sudo
@@ -10,6 +9,7 @@
     path: /etc/zabbix
     state: directory
     mode: 0755
+	group: root
 
 - name: Agregar archivo de agente zabbix para nuevo monitoreo
   copy:
