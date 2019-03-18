@@ -9,18 +9,18 @@
   - name: ensure apache is at the latest version
     file:
       path: /etc/zabbix
-state: directory
+      state: directory
       mode: 0755
-owner: root
-group: root
-  #- name: Agregar archivo de agente zabbix para nuevo monitoreo
-# copy:
-# src: /home/servidores/zabbix_agentd.conf
-# dest: /etc/zabbix/zabbix_agentd2.conf
-# owner: root
-# group: root
-# mode: 0755
-# backup: yes
-# - name: Levantar nuevo agente zabbix/zabbix_agentd2
-# command: zabbix-agent -c /etc/zabbix/zabbix_agentd2.conf
-# register: result
+      owner: root
+      group: root
+  - name: Agregar archivo de agente zabbix para nuevo monitoreo
+    copy:
+    src: /home/servidores/zabbix_agentd.conf
+    dest: /etc/zabbix/zabbix_agentd2.conf
+    owner: root
+    group: root
+    mode: 0755
+    backup: yes
+  - name: Levantar nuevo agente zabbix/zabbix_agentd2
+    command: zabbix-agent -c /etc/zabbix/zabbix_agentd2.conf
+    register: result
