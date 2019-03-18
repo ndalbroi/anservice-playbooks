@@ -22,5 +22,5 @@
       mode: 0755
       backup: yes
   - name: Levantar nuevo agente zabbix/zabbix_agentd2
-    command: zabbix-agent -c /etc/zabbix/zabbix_agentd2.conf
+    command: zabbix_agent -c /etc/zabbix/zabbix_agentd2.conf
     register: result
