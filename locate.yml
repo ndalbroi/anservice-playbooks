@@ -1,0 +1,12 @@
+---
+- hosts: Servidores Ceibal
+  remote_user: anserv
+  become: true
+  become_method: sudo
+  become_user: root
+
+  tasks:
+-name: Encontrar archivo de zabbix
+command: locate zabbix_agentd.conf
+register: result
+  
