@@ -1,0 +1,11 @@
+---
+- hosts: zabbixins
+  remote_user: anserv
+  become: true
+  become_method: sudo
+  become_user: root
+
+  tasks:
+  - name: Encontrar linea zabbix en /usr/local/etc
+    command: grep -n "Server=" /usr/local/etc/zabbix_agentd.conf
+    register: result
