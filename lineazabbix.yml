@@ -1,0 +1,14 @@
+---
+- hosts: Servidores Ceibal
+  remote_user: anserv
+  become: true
+  become_method: sudo
+  become_user: root
+  tasks:
+-name: Reemplazar linea 87 del archivo zabbix_agentd.conf
+command: sed 's/Server=192.168.1.113/'Server=192.168.1.113,192.168.100.83'/g' -i /etc/zabbix/zabbix_agentd.conf
+register: result
+
+-name: Reemplazar linea 87 del archivo zabbix_agentd.conf
+command: sed 's/Server=192.168.1.113/'Server=192.168.1.113,192.168.100.83'/g' -i /usr/local/etc/zabbix_agentd.conf
+register: result
