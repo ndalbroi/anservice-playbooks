@@ -1,5 +1,5 @@
 ---
-- hosts: Servidores Ceibal
+- hosts: Debian, Ubuntu
   remote_user: anserv
   become: true
   become_method: sudo
