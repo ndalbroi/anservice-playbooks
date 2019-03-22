@@ -9,11 +9,11 @@
   - name: Reemplazar linea zabbix en /etc/zabbix
     command: sed 's/# ListenPort=10050/'ListenPort=10050'/g' -i /etc/zabbix/zabbix_agentd.conf
     register: result
-	
+
   - name: actualizar archivo zabbix
     command: zabbix_agentd -c /etc/zabbix/zabbix_agentd.conf
     register: result
-  
+
   - name: Reiniciar agente zabbix
     command: systemctl restart zabbix-agent.service
-    register: result 	
+    register: result	
