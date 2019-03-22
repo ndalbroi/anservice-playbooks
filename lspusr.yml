@@ -1,0 +1,19 @@
+---
+- hosts: 192.168.100.103, 192.168.100.107, 192.168.100.117, 192.168.100.104, 192.168.100.127, 192.168.100.161, 168.168.100.195, 192.168.1.100, 192.168.100.93, 192.168.100.91, 192.168.1.106, 192.168.100.94, 192.168.1.111, 192.168.1.134, 192.168.1.126, 192.168.100.172, 192.168.100.155
+  remote_user: anserv
+  become: true
+  become_method: sudo
+  become_user: root
+
+  tasks:
+  - name: Reemplazar linea zabbix en /usr/local/etc/zabbix_agentd.conf
+    command: sed 's/# ListenPort=10050/'ListenPort=10050'/g' -i /usr/local/etc/zabbix_agentd.conf
+    register: result
+	
+  - name: actualizar archivo zabbix
+    command: zabbix_agentd -c /usr/local/etc/zabbix_agentd.conf
+    register: result
+  
+  - name: Reiniciar agente zabbix
+    command: /etc/init.d/zabbix-agent restar
+    register: result 
