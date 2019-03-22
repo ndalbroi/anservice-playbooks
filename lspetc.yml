@@ -15,5 +15,5 @@
     register: result
 
   - name: Reiniciar agente zabbix
-    command: systemctl restart zabbix-agent.service
+    command: /etc/init.d/zabbix-agent restart
     register: result	
