@@ -10,11 +10,11 @@
     command: sed 's/Server=Server=127.0.0.1,192.168.1.113/'Server=192.168.1.113,192.168.100.83'/g' -i /etc/zabbix/zabbix_agentd.conf
     register: result
 
-  tasks:
+  
   - name: actualizar archivo zabbix
     command: zabbix_agentd -c /etc/zabbix/zabbix_agentd.conf
     register: result
-  tasks:
+  
   - name: Reiniciar agente zabbix
     command: systemctl restart zabbix-agent.service
     register: result
