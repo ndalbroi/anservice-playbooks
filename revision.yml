@@ -7,15 +7,15 @@
 
   tasks:
   - name: Revisar version de PHP   
-    command: php --version
-    register: result
+    shell: php --version
+    #register: result
    
   - name: Revisar version de Apache  
-    command: apache2ctl -V
-    register: result
+    shell: apache2ctl -V
+    #register: result
 
   - name: Revisar si tiene Tomcat X 
     shell: /usr/share/tomcat?/bin/catalina.sh version     
   - name: Revisar si Jboss  
-    command: /opt/jboss/bin/standalone.sh --version
+    shell: /opt/jboss/bin/standalone.sh --version
     
