@@ -15,7 +15,7 @@
     #register: result
 
   - name: Revisar si tiene Tomcat X 
-    shell: /usr/share/tomcat?/bin/catalina.sh version     
-  - name: Revisar si Jboss  
+    shell: /usr/share/tomcat?/bin/catalina.sh version
+    - name: Revisar si Jboss  
     shell: /opt/jboss/bin/standalone.sh --version
     
