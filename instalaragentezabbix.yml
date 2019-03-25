@@ -7,31 +7,31 @@
 
   tasks:
   - name: Instalar agente zabbix
-    apt: 
+    apt:
       name: zabbix-agent
-      state: present	  
+      state: present
       register: result
-  
+
   - name: Cambiar linea "ListenPort" en /etc/zabbix/zabbix/zabbix_agentd.conf
     command: sed 's/# ListenPort=10050/'ListenPort=10050'/g' -i /etc/zabbix/zabbix/zabbix_agentd.conf
     register: result
-	
+
   - name: Reemplazar linea Server en /etc/zabbix/zabbix_agentd.conf
     command: sed 's/Server=127.0.0.1/'Server=192.168.100.83'/g' -i /etc/zabbix/zabbix/zabbix_agentd.conf
     register: result
-  
+
   - name: Reemplazar linea ServerActive en /etc/zabbix/zabbix_agentd.conf
     command: sed 's/ServerActive=127.0.0.1/'ServerActive=192.168.100.83'/g' -i /etc/zabbix/zabbix/zabbix_agentd.conf
     register: result
-	
+
   - name: Reemplazar linea EnableRemoteCommands en /etc/zabbix/zabbix_agentd.conf
     command: sed 's/# EnableRemoteCommands=0/'EnableRemoteCommands=1'/g' -i /etc/zabbix/zabbix/zabbix_agentd.conf
-    register: result	
-
+    register: result
+    
   - name: actualizar archivo zabbix
     command: zabbix_agentd -c /etc/zabbix/zabbix_agentd.conf
     register: result
-  
+
   - name: Reiniciar agente zabbix
     command: /etc/init.d/zabbix-agent restart
-    register: result 	
+    register: result
