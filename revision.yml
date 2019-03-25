@@ -9,6 +9,7 @@
   
   - name: Revisar si tiene Tomcat X 
     shell: /usr/share/tomcat?/bin/catalina.sh version
+    ignore_errors: yes
     
   - name: Revisar version de PHP   
     shell: php --version
@@ -16,8 +17,10 @@
    
   - name: Revisar version de Apache  
     shell: apache2ctl -V
+    ignore_errors: yes
     #register: result
   
   - name: Revisar si Jboss  
     shell: /opt/jboss/bin/standalone.sh --version
+    ignore_errors: yes
     
