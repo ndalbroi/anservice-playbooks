@@ -1,5 +1,5 @@
 ---
-- hosts: 192.168.100.168
+- hosts: 192.168.100.168, 172.16.2.110
   remote_user: anserv
   become: true
   become_method: sudo
