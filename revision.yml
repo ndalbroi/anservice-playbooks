@@ -1,5 +1,5 @@
 ---
-- hosts: aplicaciones
+- hosts: Aplicaciones
   remote_user: anserv
   become: true
   become_method: sudo
