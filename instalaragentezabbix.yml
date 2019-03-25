@@ -1,5 +1,5 @@
 ---
-- hosts: 192.168.100.100, 192.168.100.102
+- hosts: zabbixn
   remote_user: anserv
   become: true
   become_method: sudo
