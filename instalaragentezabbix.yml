@@ -1,5 +1,5 @@
 ---
-- hosts: etc
+- hosts: 192.168.100.168
   remote_user: anserv
   become: true
   become_method: sudo
@@ -11,11 +11,3 @@
       name: zabbix-agent
       state: present	  
       register: result
-	
-  - name: actualizar archivo zabbix
-    command: zabbix_agentd -c /etc/zabbix/zabbix_agentd.conf
-    register: result
-  
-  - name: Reiniciar agente zabbix
-    command: systemctl restart zabbix-agent.service
-    register: result 	
