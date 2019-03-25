@@ -6,6 +6,10 @@
   become_user: root
 
   tasks:
+  
+  - name: Revisar si tiene Tomcat X 
+    shell: /usr/share/tomcat?/bin/catalina.sh version
+    
   - name: Revisar version de PHP   
     shell: php --version
     #register: result
@@ -13,9 +17,7 @@
   - name: Revisar version de Apache  
     shell: apache2ctl -V
     #register: result
-
-  - name: Revisar si tiene Tomcat X 
-    shell: /usr/share/tomcat?/bin/catalina.sh version
-    - name: Revisar si Jboss  
+  
+  - name: Revisar si Jboss  
     shell: /opt/jboss/bin/standalone.sh --version
     
