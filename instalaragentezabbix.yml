@@ -1,0 +1,21 @@
+---
+- hosts: etc
+  remote_user: anserv
+  become: true
+  become_method: sudo
+  become_user: root
+
+  tasks:
+  - name: Instalar agente zabbix
+    apt: 
+      name: zabbix-agent
+      state: present	  
+      register: result
+	
+  - name: actualizar archivo zabbix
+    command: zabbix_agentd -c /etc/zabbix/zabbix_agentd.conf
+    register: result
+  
+  - name: Reiniciar agente zabbix
+    command: systemctl restart zabbix-agent.service
+    register: result 	
