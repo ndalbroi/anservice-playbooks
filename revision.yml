@@ -6,21 +6,19 @@
   become_user: root
 
   tasks:
-  
-  - name: Revisar si tiene Tomcat X 
-    shell: /usr/share/tomcat?/bin/catalina.sh version
-    ignore_errors: yes
-    
   - name: Revisar version de PHP   
-    shell: php --version
-    #register: result
-   
+    command: php --version
+    register: command_result
+    ignore_errors: yes
   - name: Revisar version de Apache  
-    shell: apache2ctl -V
+    command: apache2ctl -V
+    register: command_result
     ignore_errors: yes
-    #register: result
-  
+  - name: Revisar si tiene Tomcat X 
+    command: /usr/share/tomcat?/bin/catalina.sh version     
+    register: command_result
+    ignore_errors: yes
   - name: Revisar si Jboss  
-    shell: /opt/jboss/bin/standalone.sh --version
+    command: /opt/jboss/bin/standalone.sh --version
+    register: command_result
     ignore_errors: yes
-    
