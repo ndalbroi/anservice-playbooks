@@ -15,10 +15,10 @@
     register: command_result
     ignore_errors: yes
   - name: Revisar si tiene Tomcat X 
-    command: /usr/share/tomcat?/bin/catalina.sh version     
-    register: command_result
+    shell: /usr/share/tomcat?/bin/catalina.sh version     
+    #register: command_result
     ignore_errors: yes
   - name: Revisar si Jboss  
-    command: /opt/jboss/bin/standalone.sh --version
-    register: command_result
+    shell: /opt/jboss/bin/standalone.sh --version
+    #register: command_result
     ignore_errors: yes
