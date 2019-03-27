@@ -9,30 +9,34 @@
   - name: Instalar agente zabbix
     apt:
       name: zabbix-agent
-      state: present
+      state: latest
       update_cache: yes
       
       
 
   - name: Cambiar linea "ListenPort" en /etc/zabbix/zabbix/zabbix_agentd.conf
-    command: sed 's/# ListenPort=10050/'ListenPort=10050'/g' -i /etc/zabbix/zabbix/zabbix_agentd.conf
-    register: result
-    ignore_errors: yes
+  - lineinfile:
+    path: /etc/zabbix/zabbix/zabbix_agentd.conf
+    regexp: '^# ListenPort=10050'
+    line: 'ListenPort=10050'
 
   - name: Reemplazar linea Server en /etc/zabbix/zabbix_agentd.conf
-    command: sed 's/Server=127.0.0.1/'Server=192.168.100.83'/g' -i /etc/zabbix/zabbix/zabbix_agentd.conf
-    register: result
-    ignore_errors: yes
+  - lineinfile:
+    path: /etc/zabbix/zabbix/zabbix_agentd.conf
+    regexp: '^Server=127.0.0.1'
+    line: 'Server=192.168.100.83'
 
   - name: Reemplazar linea ServerActive en /etc/zabbix/zabbix_agentd.conf
-    command: sed 's/ServerActive=127.0.0.1/'ServerActive=192.168.100.83'/g' -i /etc/zabbix/zabbix/zabbix_agentd.conf
-    register: result
-    ignore_errors: yes
+  - lineinfile:
+    path: /etc/zabbix/zabbix/zabbix_agentd.conf
+    regexp: '^ServerActive=127.0.0.1'
+    line: 'ServerActive=192.168.100.83'
 
   - name: Reemplazar linea EnableRemoteCommands en /etc/zabbix/zabbix_agentd.conf
-    command: sed 's/# EnableRemoteCommands=0/'EnableRemoteCommands=1'/g' -i /etc/zabbix/zabbix/zabbix_agentd.conf
-    register: result
-    ignore_errors: yes
+  - lineinfile:
+    path: /etc/zabbix/zabbix/zabbix_agentd.conf
+    regexp: '^# EnableRemoteCommands=0'
+    line: 'EnableRemoteCommands=1'
     
   - name: actualizar archivo zabbix
     command: zabbix_agentd -c /etc/zabbix/zabbix_agentd.conf
