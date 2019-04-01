@@ -1,5 +1,5 @@
 ---
-- hosts: zabbixn
+- hosts: zabbixndeb
   remote_user: anserv
   become: true
   become_method: sudo
