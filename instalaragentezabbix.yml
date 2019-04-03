@@ -12,25 +12,25 @@
       state: latest
       update_cache: yes 
 
-  - name: Cambiar linea "ListenPort" en /etc/zabbix/zabbix/zabbix_agentd.conf
+  # Cambiar linea "ListenPort" en /etc/zabbix/zabbix/zabbix_agentd.conf
   - lineinfile:
     path: /etc/zabbix/zabbix/zabbix_agentd.conf
     regexp: '^# ListenPort=10050'
     line: 'ListenPort=10050'
 
-  - name: Reemplazar linea Server en /etc/zabbix/zabbix_agentd.conf
+  # Reemplazar linea Server en /etc/zabbix/zabbix_agentd.conf
   - lineinfile:
     path: /etc/zabbix/zabbix/zabbix_agentd.conf
     regexp: '^Server=127.0.0.1'
     line: 'Server=192.168.100.83'
 
-  - name: Reemplazar linea ServerActive en /etc/zabbix/zabbix_agentd.conf
+  # Reemplazar linea ServerActive en /etc/zabbix/zabbix_agentd.conf
   - lineinfile:
     path: /etc/zabbix/zabbix/zabbix_agentd.conf
     regexp: '^ServerActive=127.0.0.1'
     line: 'ServerActive=192.168.100.83'
 
-  - name: Reemplazar linea EnableRemoteCommands en /etc/zabbix/zabbix_agentd.conf
+  # Reemplazar linea EnableRemoteCommands en /etc/zabbix/zabbix_agentd.conf
   - lineinfile:
     path: /etc/zabbix/zabbix/zabbix_agentd.conf
     regexp: '^# EnableRemoteCommands=0'
