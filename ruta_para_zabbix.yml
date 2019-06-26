@@ -1,0 +1,11 @@
+    
+---
+- hosts: ruta
+  remote_user: anserv
+  become: true
+  become_method: sudo
+  become_user: root
+
+  tasks:
+  - name: Agregar ruta para zabbix
+    shell: echo "/sbin/ip route add 172.26.251.0/24 via 192.168.153.1" >> /etc/rc.local
