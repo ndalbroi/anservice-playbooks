@@ -1,4 +1,3 @@
-    
 ---
 - hosts: ruta
   remote_user: anserv
