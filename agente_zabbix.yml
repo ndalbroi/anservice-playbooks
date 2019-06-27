@@ -1,5 +1,5 @@
 ---
-- hosts: ruta
+- hosts: rutas
   remote_user: anserv
   become: true
   become_method: sudo
