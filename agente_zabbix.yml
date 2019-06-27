@@ -1,0 +1,30 @@
+---
+- hosts: ruta
+  remote_user: anserv
+  become: true
+  become_method: sudo
+  become_user: root
+
+  tasks:
+  - name: Instalar agente zabbix
+    apt:
+      name: zabbix-agent
+      state: latest
+      update_cache: yes 
+
+ - name: descargar archivo zabbix_agetnd.conf
+   shell: wget -P /home/servidores/ https://churrinche.ceibal.edu.uy/joomla/zabbix_agentd.conf
+   
+ - name: Mover archivo de configuración  
+   shell: mv /home/servidores/zabbix_agentd.conf /etc/zabbix/
+   
+ - name: Crear directorio /etc/zabbix/zabbix_agentd.d
+   shell: mkdir /etc/zabbix/zabbix_agentd.d
+   
+ - name: detener agent zabbix 
+   shell: /etc/init.d/zabbix-agent stop
+    
+  - name: actualizar archivo zabbix
+    command: zabbix_agentd -c /etc/zabbix/zabbix_agentd.conf
+    register: result
+    ignore_errors: yes
