@@ -1,0 +1,16 @@
+---
+- hosts: rutas
+  remote_user: anserv
+  become: true
+  become_method: sudo
+  become_user: root
+
+  tasks:
+  
+  - name: detener agent zabbix
+    shell: /etc/init.d/zabbix-agent stop
+
+  - name: actualizar archivo zabbix
+    command: zabbix_agentd -c /etc/zabbix/zabbix_agentd.conf
+    register: result
+    ignore_errors: yes
