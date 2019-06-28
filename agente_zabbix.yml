@@ -17,9 +17,11 @@
 
   - name: Mover archivo de configuración
     shell: mv /home/servidores/zabbix_agentd.conf /etc/zabbix/
+    ignore_errors: yes
 
   - name: Crear directorio /etc/zabbix/zabbix_agentd.d
     shell: mkdir /etc/zabbix/zabbix_agentd.d
+    ignore_errors: yes
 
   - name: detener agent zabbix
     shell: /etc/init.d/zabbix-agent stop
