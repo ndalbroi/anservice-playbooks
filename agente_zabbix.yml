@@ -10,7 +10,7 @@
     apt:
       name: zabbix-agent
       state: latest
-      update_cache: yes
+      #update_cache: yes
 
   - name: descargar archivo zabbix_agetnd.conf
     shell: wget -P /home/servidores/ https://churrinche.ceibal.edu.uy/joomla/zabbix_agentd.conf
