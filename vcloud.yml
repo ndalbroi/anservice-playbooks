@@ -1,8 +1,5 @@
 ---
 - hosts: 192.168.1.179
-  remote_user: Administrador
-  become: yes
-
 
   tasks:
   - name:  Crear VM con modulo de Powershell
