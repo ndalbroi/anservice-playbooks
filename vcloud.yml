@@ -1,0 +1,9 @@
+---
+- hosts: 192.168.1.179
+  remote_user: Administrador
+  become: yes
+
+
+  tasks:
+  - name:  Crear VM con modulo de Powershell
+    win_command: powershell.exe -ExecutionPolicy ByPass -File C:\Users\Administrador.CEIBAL\Documents\test.ps1
