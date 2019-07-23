@@ -1,0 +1,7 @@
+---
+- hosts: 192.168.1.179
+
+  tasks:
+  - name:  Crear VM con modulo de Powershell
+    win_command: powershell.exe -ExecutionPolicy ByPass -File C:\Users\Administrador.CEIBAL\Documents\PROD1.ps1
+    register: result
