@@ -4,5 +4,5 @@
   tasks:
   - name:  Crear VM con modulo de Powershell
     win_shell: 
-      Connect-CIServer -Server paneldcv.empresas.antel.com.uy -Org CEIBAL -User ansible -Password An5!bL3@execP14Ybook |
+      Connect-CIServer -Server paneldcv.empresas.antel.com.uy -Org CEIBAL -User ansible -Password An5!bL3@execP14Ybook `
       New-CIVApp -Name 'ansibletest' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PROD1'
