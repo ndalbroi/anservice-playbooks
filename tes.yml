@@ -5,5 +5,11 @@
   - name:  Prueba powershell
     win_command: powershell.exe -
     args:
-      stdin: Connect-CIServer -Server paneldcv.empresas.antel.com.uy -Org CEIBAL -User ansible -Password An5!bL3@execP14Ybook     
+      stdin: Connect-CIServer -Server paneldcv.empresas.antel.com.uy -Org CEIBAL -User ansible -Password An5!bL3@execP14Ybook
+      register: Connect-CIServer
       
+   - name:  Prueba powershell
+    win_command: powershell.exe -
+    args:
+      stdin: New-CIVApp -Name 'template' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PROD1'
+      register: New-CIVApp
