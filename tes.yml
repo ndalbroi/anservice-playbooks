@@ -7,7 +7,7 @@
     args: 
       stidn: Connect-CIServer -Server paneldcv.empresas.antel.com.uy -Org CEIBAL -User ansible -Password An5!bL3@execP14Ybook
  
-   - name:  Crear vp
+  - name:  Crear vp
     win_command: powershell.exe -
     args: 
       stidn: New-CIVApp -Name 'template' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PROD1'
