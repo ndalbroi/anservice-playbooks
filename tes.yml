@@ -16,3 +16,4 @@
     win_command: powershell.exe -
     args: 
       stidn: New-CIVM -Name 'app' -ComputerName 'APP' -VApp 'ansibletest' -VMTemplate Centos
+    register: stdout  
