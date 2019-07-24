@@ -5,15 +5,7 @@
   - name:  Crear VM con modulo de Powershell
     win_command: powershell.exe -
     args: 
-      stidn: Connect-CIServer -Server paneldcv.empresas.antel.com.uy -Org CEIBAL -User ansible -Password An5!bL3@execP14Ybook
- 
-  - name:  Crear vp
-    win_command: powershell.exe -
-    args: 
-      stidn: New-CIVApp -Name 'ansibletest' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PROD1'
-      
-  - name:  Crear vp
-    win_command: powershell.exe -
-    args: 
-      stidn: New-CIVM -Name 'app' -ComputerName 'APP' -VApp 'ansibletest' -VMTemplate Centos
+      stidn: Connect-CIServer -Server paneldcv.empresas.antel.com.uy -Org CEIBAL -User ansible -Password An5!bL3@execP14Ybook '
+      New-CIVApp -Name 'ansibletest' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PROD1' '
+      New-CIVM -Name 'app' -ComputerName 'APP' -VApp 'ansibletest' -VMTemplate Centos
     register: stdout_lines  
