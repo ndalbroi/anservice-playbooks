@@ -5,4 +5,4 @@
   - name:  Clonar vApp
     win_shell: |
       Connect-CIServer -Server paneldcv.empresas.antel.com.uy -Org CEIBAL -User ansible -Password An5!bL3@execP14Ybook
-      New-CIVApp -Name 'KidBoxAppProd1' -VApp 'KidBoxAppProd' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PREP'  
+      New-CIVApp -Name 'CEIBAL-REPO-DEVEL-prep' -VApp 'CEIBAL-REPO-DEVEL' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PREP'  
