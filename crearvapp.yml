@@ -1,0 +1,3 @@
+
+
+New-CIVApp -Name 'jovenesdigital-prod' -VAppTemplate 'Template_CentOS' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PROD1'
