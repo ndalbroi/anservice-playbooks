@@ -9,4 +9,4 @@
 
     - debug: var=hostvars[inventory_hostname]['ansible_eth0']['ipv4']['address']
     - debug: var=hostvars[inventory_hostname]['ansible_eth1']['ipv4']['address']
-    - debug: var=hostvars[inventory_hostname]['ansible_hostname']~
+    - debug: var=hostvars[inventory_hostname]['ansible_hostname']
