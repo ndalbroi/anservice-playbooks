@@ -5,8 +5,9 @@
   - name:  Clonar vApp
     win_shell: |
       Connect-CIServer -Server paneldcv.empresas.antel.com.uy -Org CEIBAL -User ansible -Password An5!bL3@execP14Ybook
-      New-CIVApp -Name 'Actualizaciones-prep' -VApp 'Actualizaciones' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PREP'
-      New-CIVApp -Name 'PortalBD1Prod-prep' -VApp 'PortalBD1Prod' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PREP'
-      New-CIVApp -Name 'ocs_inventory-prep' -VApp 'ocs_inventory' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PREP'
-      New-CIVApp -Name 'OCSBD-prep' -VApp 'OCSBD' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PREP'
-      New-CIVApp -Name 'saax-prep' -VApp 'vApp_saax' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PREP'
+      New-CIVApp -Name 'KidBce01-prod' -VApp 'TestKidBce01' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PROD1'
+      New-CIVApp -Name 'KidBce02-prod' -VApp 'TestKidBce02' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PROD1'
+      New-CIVApp -Name 'KidApp01-prod' -VApp 'TestKidApp01' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PROD1'
+      New-CIVApp -Name 'KidApp02-prod' -VApp 'TestKidApp02' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PROD1'
+      New-CIVApp -Name 'KidBD-prod' -VApp 'TestKidBD' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PROD1'
+      New-CIVApp -Name 'KidEstadisticas-prod' -VApp 'TestKidEstadisticas' -OrgVdc 'VDC01-PAN01-E27024-CEIBAL-PROD1'
